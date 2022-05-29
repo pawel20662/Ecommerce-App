@@ -15,6 +15,40 @@ public class Wine {
     private Long id;
     private String name;
 
+    public Boolean getNew_product() {
+        return new_product;
+    }
+
+    public void setNew_product(Boolean new_product) {
+        this.new_product = new_product;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public Wine(Boolean new_product, String desc, String imgUrl) {
+        this.new_product = new_product;
+        this.desc = desc;
+        this.imgUrl = imgUrl;
+    }
+
+    private Boolean new_product;
+    private String desc;
+    private String imgUrl;
+
     public Wine(Long id, String name, String mark, String price, String country) {
         id = id;
         this.name = name;
