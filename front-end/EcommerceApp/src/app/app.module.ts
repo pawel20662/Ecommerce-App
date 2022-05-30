@@ -9,8 +9,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { ContactComponent } from './Component/contact/contact.component';
 import { SendOpinionComponent } from './Component/send-opinion/send-opinion.component';
 import { NewWineComponent } from './Component/new-wine/new-wine.component';
-import { MainPageComponent } from './component/main-page/main-page.component';
 import { FooterComponent } from './component/footer/footer.component';
+import {MainPageComponent} from "./Component/main-page/main-page.component";
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -20,8 +20,8 @@ import { FooterComponent } from './component/footer/footer.component';
     SendOpinionComponent,
     SendOpinionComponent,
     NewWineComponent,
-    MainPageComponent,
-    FooterComponent
+    FooterComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

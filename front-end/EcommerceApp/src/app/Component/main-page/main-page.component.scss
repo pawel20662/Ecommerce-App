@@ -6,6 +6,7 @@
 }
 .all-wine {
   display: grid;
+  position: relative;
   grid-template-columns: repeat(2, 48.6%);
   row-gap: 1rem;
   column-gap: 3%;
