@@ -1,6 +1,5 @@
-package com.example.EcommerceApp.ProductWine;
+package com.example.Ecommerce.app.ProductWine;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,12 +9,12 @@ public class WineService {
 
     private final WineRepo wineRepo;
 
-    @Autowired
+
     public WineService(WineRepo wineRepo) {
         this.wineRepo = wineRepo;
     }
 
-public List<Wine> findAllWine(){
+    public List<Wine> findAllWine(){
         return wineRepo.findAll();
-}
+    }
 }

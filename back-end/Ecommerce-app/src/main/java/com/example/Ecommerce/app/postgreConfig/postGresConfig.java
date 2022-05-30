@@ -1,14 +1,16 @@
-package com.example.EcommerceApp.ConfigDataBase;
+package com.example.Ecommerce.app.postgreConfig;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 
-public class Postgre {
+@Configuration
 
+public class postGresConfig {
     @Value("${spring.datasource.driver-class-name}")
 
     private String driverClassName;

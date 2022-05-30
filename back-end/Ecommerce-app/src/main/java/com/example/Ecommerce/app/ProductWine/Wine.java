@@ -1,4 +1,4 @@
-package com.example.EcommerceApp.ProductWine;
+package com.example.Ecommerce.app.ProductWine;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -23,12 +23,12 @@ public class Wine {
         this.new_product = new_product;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String desc) {
+        this.description = desc;
     }
 
     public String getImgUrl() {
@@ -39,14 +39,14 @@ public class Wine {
         this.imgUrl = imgUrl;
     }
 
-    public Wine(Boolean new_product, String desc, String imgUrl) {
+    public Wine(Boolean new_product, String description, String imgUrl) {
         this.new_product = new_product;
-        this.desc = desc;
+        this.description = description;
         this.imgUrl = imgUrl;
     }
 
     private Boolean new_product;
-    private String desc;
+    private String description;
     private String imgUrl;
 
     public Wine(Long id, String name, String mark, String price, String country) {

@@ -11,6 +11,8 @@ import { SendOpinionComponent } from './Component/send-opinion/send-opinion.comp
 import { NewWineComponent } from './Component/new-wine/new-wine.component';
 import { FooterComponent } from './component/footer/footer.component';
 import {MainPageComponent} from "./Component/main-page/main-page.component";
+import { SingInComponent } from './component/sing-in/sing-in.component';
+import {MatInputModule} from '@angular/material/input';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import {MainPageComponent} from "./Component/main-page/main-page.component";
     SendOpinionComponent,
     NewWineComponent,
     FooterComponent,
-    MainPageComponent
+    MainPageComponent,
+    SingInComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatMenuModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

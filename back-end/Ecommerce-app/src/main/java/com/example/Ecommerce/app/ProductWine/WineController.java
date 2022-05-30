@@ -1,4 +1,4 @@
-package com.example.EcommerceApp.ProductWine;
+package com.example.Ecommerce.app.ProductWine;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ public class WineController {
     }
 
     @GetMapping("/all")
-        public ResponseEntity<List<Wine>> getAllWine() {
+    public ResponseEntity<List<Wine>> getAllWine() {
         List<Wine> wine = wineService.findAllWine();
         return new  ResponseEntity<>(wine,HttpStatus.OK);
     }
