@@ -1,0 +1,33 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 22.8%);
+  row-gap: 1rem;
+  column-gap: 3%;
+  grid-auto-rows: 20rem;
+  height: 75vh;
+  border-bottom: 2px solid black;
+}
+.item1 {
+  background-color: #543230;
+}
+.item2 {
+  background-color: purple;
+}
+.item3 {
+  background-color: blue;
+}
+.item4 {
+  background-color: black;
+}
+.item5 {
+  background-color: palegreen;
+}
+.item6 {
+  background-color: aqua;
+}
+.item7 {
+  background-color: antiquewhite;
+}
+.item8 {
+  background-color: chocolate;
+}

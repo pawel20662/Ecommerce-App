@@ -1,0 +1,32 @@
+.menu-filter {
+  width: 30%;
+  float: left;
+  height: 15vh;
+  background-color: aqua;
+}
+.all-wine {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(2, 48.6%);
+  row-gap: 1rem;
+  column-gap: 3%;
+  grid-auto-rows: 20rem;
+  width: 70%;
+  float: left;
+  height: auto;
+}
+.container {
+  margin-top: 2rem;
+}
+.item1 {
+  background-color: chocolate;
+}
+.item2 {
+  background-color: palegreen;
+}
+.item3 {
+  background-color: black;
+}
+.item4 {
+  background-color: red;
+}
