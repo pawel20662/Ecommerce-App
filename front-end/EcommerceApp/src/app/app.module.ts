@@ -13,6 +13,12 @@ import { FooterComponent } from './component/footer/footer.component';
 import {MainPageComponent} from "./Component/main-page/main-page.component";
 import { SingInComponent } from './component/sing-in/sing-in.component';
 import {MatInputModule} from '@angular/material/input';
+import { PanelAdminComponent } from './component/panel-admin/panel-admin.component';
+import {HttpClientModule} from "@angular/common/http";
+import { AdminMenuComponent } from './component/admin-menu/admin-menu.component';
+import { AdminAllWinesComponent } from './component/admin-all-wines/admin-all-wines.component';
+import { AddwineComponent } from './component/addwine/addwine.component';
+import {MatRadioModule} from '@angular/material/radio';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -25,6 +31,10 @@ import {MatInputModule} from '@angular/material/input';
     FooterComponent,
     MainPageComponent,
     SingInComponent,
+    PanelAdminComponent,
+    AdminMenuComponent,
+    AdminAllWinesComponent,
+    AddwineComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +42,9 @@ import {MatInputModule} from '@angular/material/input';
     BrowserAnimationsModule,
     MatMenuModule,
     MatInputModule,
+    HttpClientModule,
+    HttpClientModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface WineRepo extends JpaRepository<Wine, Long> {
+    void deleteWineById(Long id);
 }

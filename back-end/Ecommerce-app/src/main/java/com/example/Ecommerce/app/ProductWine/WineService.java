@@ -17,4 +17,12 @@ public class WineService {
     public List<Wine> findAllWine(){
         return wineRepo.findAll();
     }
+
+    public Wine addWine(Wine wine) {
+        return wineRepo.save(wine);
+    }
+
+    public void deleteWine(Long id) {
+        wineRepo.deleteWineById(id);
+    }
 }
