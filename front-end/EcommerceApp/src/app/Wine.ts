@@ -5,7 +5,7 @@ export interface Wine {
   category: string;
   price: string;
   country: string;
-  desc: string;
+  description: string;
   imgUrl: string;
   new_product: boolean;
 }

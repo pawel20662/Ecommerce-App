@@ -8,22 +8,28 @@ import {Wine} from "../../Wine";
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-
-    public wines: Wine[] | undefined;
-
+  isMenuOpened: boolean = false;
+    wines: Wine[] | undefined;
   constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
     this.getWine();
   }
-
-
   getWine(): void {
     this.httpService.getWine().subscribe(
       (response: Wine[]) => {
-          this.wines = response;
-          console.log(this.wines);
+        this.wines = response;
+        console.log(this.wines);
       }
     )
   }
+
+  toggleMenu(): void {
+    this.isMenuOpened = !this.isMenuOpened;
+  }
+
+  clickedOutside(): void {
+    this.isMenuOpened = false;
+  }
 }
+

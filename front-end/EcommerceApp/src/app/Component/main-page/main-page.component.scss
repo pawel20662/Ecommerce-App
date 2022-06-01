@@ -1,23 +1,23 @@
 .menu-filter {
-  width: 30%;
+  width: 15%;
   float: left;
   height: 15vh;
-  background-color: aqua;
 }
 .all-wine {
   display: grid;
   position: relative;
-  grid-template-columns: repeat(2, 48.6%);
-  row-gap: 10rem;
-  column-gap: 25%;
+  grid-template-columns: repeat(3, 48.6%);
+  row-gap: 20%;
+  column-gap: 28%;
   grid-auto-rows: 20rem;
   width: 50%;
   float: left;
-  margin-left: 5rem;
+  margin-left: 2%;
 }
 .container {
   margin-top: 2rem;
   height: auto;
+  width: 85%;
 }
 .item1 {
   height: 50vh;
@@ -40,3 +40,11 @@ button {
   width: 3rem;
   border-radius: 50%;
 }
+.menu-toggler {
+  width: 100%;
+  font-size: 1.5rem;
+  color: black;
+  text-align: center;
+  padding: 2%;
+}
+

@@ -9,6 +9,13 @@ import {SingInComponent} from "./Component/sing-in/sing-in.component";
 import {PanelAdminComponent} from "./Component/panel-admin/panel-admin.component";
 import {AdminAllWinesComponent} from "./Component/admin-all-wines/admin-all-wines.component";
 import {AddwineComponent} from "./Component/addwine/addwine.component";
+import {AllOpinionComponent} from "./Component/all-opinion/all-opinion.component";
+import {UpdateWineComponent} from "./Component/update-wine/update-wine.component";
+import {WhiteWineComponent} from "./Component/white-wine/white-wine.component";
+import {RedWineComponent} from "./Component/red-wine/red-wine.component";
+import {RoseWineComponent} from "./Component/rose-wine/rose-wine.component";
+import {DessertWineComponent} from "./Component/dessert-wine/dessert-wine.component";
+import {SparklingWineComponent} from "./Component/sparkling-wine/sparkling-wine.component";
 
 
 const routes: Routes = [
@@ -19,6 +26,15 @@ const routes: Routes = [
   {path: 'admin-panel', component: PanelAdminComponent},
   {path: 'admin-panel/allWines', component: AdminAllWinesComponent},
   {path: 'admin-panel/addWine', component: AddwineComponent},
+  {path: 'admin-panel/allOpinion', component: AllOpinionComponent},
+  {path: 'updateWine/:id', component: UpdateWineComponent},
+  {path: `admin-panel/allOpinion/addWine`, redirectTo: 'admin-panel/addWine' },
+  {path: 'admin-panel/addWine/allOpinion', redirectTo: 'admin-panel/allOpinion'},
+  {path: 'white-wine', component: WhiteWineComponent},
+  {path: 'red-wine', component: RedWineComponent},
+  {path: 'rose-wine', component: RoseWineComponent},
+  {path: 'dessert-wine', component: DessertWineComponent},
+  {path: 'sparkling-wine', component: SparklingWineComponent},
 ];
 
 @NgModule({

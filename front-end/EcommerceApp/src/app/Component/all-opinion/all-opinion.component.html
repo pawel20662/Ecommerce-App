@@ -1,0 +1,19 @@
+<div class="container">
+  <p>All opinions</p>
+  <table class="table">
+    <thead>
+    <th>Name</th>
+    <th>Last Name</th>
+    <th>Description</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let opinion of opinions">
+      <td>{{opinion.name}}</td>
+      <td>{{opinion.lastName}}</td>
+      <td>{{opinion.description}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<app-admin-menu></app-admin-menu>

@@ -1,5 +1,5 @@
 export interface Opinion {
   name: string;
-  last_name: string;
+  lastName: string;
   description: string;
 }
