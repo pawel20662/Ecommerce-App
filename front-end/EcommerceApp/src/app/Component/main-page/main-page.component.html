@@ -1,11 +1,44 @@
 <div class="container">
 <div class="menu-filter">
-  sada
+  <h2>Menu Filter</h2>
+  <div class="menu-container">
+    <div class="menu-toggler" (click)="toggleMenu()">Wine category</div>
+    <div class="menu" *ngIf="isMenuOpened">
+      <div class="menu-item"><input type="checkbox">white wine</div>
+      <div class="menu-item"><input type="checkbox">red wine</div>
+      <div class="menu-item"><input type="checkbox">rose wine</div>
+      <div class="menu-item"><input type="checkbox">dessert wine</div>
+      <div class="menu-item"><input type="checkbox">sparkling wine</div>
+    </div>
+
+    <div class="menu-toggler" (click)="toggleMenu()">Price</div>
+    <div class="menu" *ngIf="isMenuOpened">
+      <div class="menu-item"><input type="checkbox">100-300PLN</div>
+      <div class="menu-item"><input type="checkbox">Above 300PLN</div>
+    </div>
+
+    <div class="menu-toggler" (click)="toggleMenu()">Country</div>
+    <div class="menu" *ngIf="isMenuOpened">
+      <div class="menu-item"><input type="checkbox">France</div>
+      <div class="menu-item"><input type="checkbox">Spain</div>
+      <div class="menu-item"><input type="checkbox">Germany</div>
+      <div class="menu-item"><input type="checkbox">Italy</div>
+    </div>
+  </div>
+  <button type="submit" class="apply">apply</button>
 </div>
 <div class="all-wine">
-  <div class="item1"></div>
-  <div class="item2"></div>
-  <div class="item3"></div>
-  <div class="item4"></div>
+  <div class="item1"*ngFor="let wine of wines">
+    <div class="img"></div>
+    <div class="desc">
+      <p>{{wine?.name}}</p>
+      <p>{{wine?.price}}zł</p>
+      <div class="button">
+        <button type="submit">Add to cart</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 </div>
+

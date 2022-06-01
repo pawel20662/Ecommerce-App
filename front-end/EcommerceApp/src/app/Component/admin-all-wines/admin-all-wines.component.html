@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div class="all-wine">
+    <div class="item1"*ngFor="let wine of wines">
+      <div class="img"></div>
+      <div class="desc">
+        <p>{{wine?.name}}</p>
+        <p>{{wine?.price}}zł</p>
+        <div class="button">
+          <button type="submit" (click)="goToUpdateWine(wine.id)">Update Wine</button>
+          <button type="submit" (click)="deleteWine(wine.id)">Delete Wine</button>
+        </div>
+      </div>
+    </div>
+</div>

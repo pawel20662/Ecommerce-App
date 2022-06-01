@@ -1,23 +1,25 @@
 <div class="container">
   <div class="form">
-
+    <h2>Send a opinion of this website</h2>
+    <form [formGroup]="OpinionForm">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Name</mat-label>
-      <input matInput placeholder="Enter your name" value="Jhon">
+      <input matInput placeholder="Enter your name" value="Jhon" formControlName="name">
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Last name</mat-label>
-      <input matInput placeholder="Enter your last name" value="Jhon">
+      <input matInput placeholder="Enter your last name" value="Jhon" formControlName="lastName">
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Description</mat-label>
-      <input matInput placeholder="this is a good page, but...">
+      <input matInput placeholder="this is a good page, but..." formControlName="description">
     </mat-form-field>
     <div class="submit">
-      <button type="submit">Send a opinion</button>
+      <button type="submit" (click)="addOpinion()">Send a opinion</button>
     </div>
-
+    </form>
   </div>
 </div>
+<app-footer></app-footer>

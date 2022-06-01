@@ -1,0 +1,54 @@
+<script src="../../Opinion.ts"></script>
+<div class="container">
+
+  <div class="form">
+    <h3>Add Wine</h3>
+      <form [formGroup]="addWineForm">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Enter name of wine" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Mark</mat-label>
+      <input matInput placeholder="Enter mark of wine" formControlName="mark">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Category</mat-label>
+      <input matInput placeholder="Enter category of wine" formControlName="category">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput placeholder="Enter price of wine" formControlName="price">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Country</mat-label>
+      <input matInput placeholder="Enter country of wine" formControlName="country">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="Enter description of wine" formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>ImgUrl</mat-label>
+      <input matInput placeholder="Enter imgUrl of wine" formControlName="imgUrl">
+    </mat-form-field>
+    <h4>New product?</h4>
+    <mat-radio-group aria-label="Select an option" formControlName="new_product">
+      <mat-radio-button value="true">Yes</mat-radio-button>
+      <mat-radio-button value="false">No</mat-radio-button>
+    </mat-radio-group>
+
+    <div class="submit">
+      <button type="submit" (click)="addWine()">Send a opinion</button>
+    </div>
+      </form>
+  </div>
+</div>
+
+<app-admin-menu></app-admin-menu>

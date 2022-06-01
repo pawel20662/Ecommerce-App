@@ -1,0 +1,53 @@
+<div class="main">
+<!--  [(ngModel)] = "wines.mark"-->
+  <div class="form">
+    <h3>Update Wine</h3>
+    <form (ngSubmit)="updateWine()">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter name of wine">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Mark</mat-label>
+        <input matInput placeholder="Enter mark of wine">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Category</mat-label>
+        <input matInput placeholder="Enter category of wine">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Enter price of wine">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Country</mat-label>
+        <input matInput placeholder="Enter country of wine">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Enter description of wine">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>ImgUrl</mat-label>
+        <input matInput placeholder="Enter imgUrl of wine">
+      </mat-form-field>
+      <h4>New product?</h4>
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="true">Yes</mat-radio-button>
+        <mat-radio-button value="false">No</mat-radio-button>
+      </mat-radio-group>
+
+      <div class="submit">
+        <button type="submit" (click)="updateWine()">Send a opinion</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-admin-menu></app-admin-menu>
