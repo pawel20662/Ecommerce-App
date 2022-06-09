@@ -1,4 +1,4 @@
-.main {
+.main-white-wine {
   display: grid;
   grid-template-columns: repeat(4, 22.8%);
   row-gap: 12rem;
@@ -6,6 +6,7 @@
   grid-auto-rows: 20rem;
   border-bottom: 2px solid black;
   height: 110vh;
+  margin-top: 3%;
 }
 
 .item1 {

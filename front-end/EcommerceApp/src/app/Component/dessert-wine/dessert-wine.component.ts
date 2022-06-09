@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Wine} from "../../Wine";
-import {HttpService} from "../../Services/http.service";
 import {HttpWineService} from "../../Services/http-wine.service";
 
 @Component({
@@ -24,7 +23,9 @@ export class DessertWineComponent implements OnInit {
   getWineByCategory(dessert: string | undefined){
 
     this.httpWine.getWineByCategory(dessert).subscribe(
-      response =>   console.log('success'),
+      (response: Wine[]) => {
+        this.wines = response;
+      },
       error => console.log('error')
     );
   }

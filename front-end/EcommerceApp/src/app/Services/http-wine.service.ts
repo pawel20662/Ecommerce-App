@@ -21,8 +21,8 @@ export class HttpWineService {
     return this.http.get<Wine>(`${this.apiServerUrl}/wine/find/${id}`);
   }
 
-  public getWineByCategory(category: string | undefined): Observable<Wine> {
-    return this.http.get<Wine>(`${this.apiServerUrl}/wine/${category}`);
+  public getWineByCategory(category: string | undefined): Observable<Wine[]> {
+    return this.http.get<Wine[]>(`${this.apiServerUrl}/wine/${category}`);
   }
 
   public deleteWine(id: number){

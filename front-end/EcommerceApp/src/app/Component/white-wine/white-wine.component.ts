@@ -23,9 +23,10 @@ export class WhiteWineComponent implements OnInit {
   getWineByCategory(white: string | undefined){
 
     this.httpWine.getWineByCategory(white).subscribe(
-      response =>   console.log('success'),
+      (response: Wine[]) => {
+        this.wines = response;
+      },
       error => console.log('error')
     );
   }
-  //todo nie działa poprawnie (dane przychodzą z backendu), problem z subscribe\\
 }

@@ -1,1 +1,15 @@
-<p>sparkling-wine works!</p>
+<div class="main-sparkling-wine">
+  <div *ngFor="let wine of wines" class="item1">
+    <div class="img">
+      <img [src]="wine?.imgUrl">
+    </div>
+    <div class="desc">
+      <p>{{wine?.name}}</p>
+      <p>{{wine?.price}}zł</p>
+      <div class="button">
+        <button type="submit">Add to cart</button>
+      </div>
+    </div>
+  </div>
+
+</div>

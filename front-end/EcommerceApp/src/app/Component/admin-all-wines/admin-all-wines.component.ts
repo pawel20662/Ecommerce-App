@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Wine} from "../../Wine";
-import {HttpService} from "../../Services/http.service";
 
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";

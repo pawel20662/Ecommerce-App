@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Wine} from "../../Wine";
-import {HttpService} from "../../Services/http.service";
 import {HttpWineService} from "../../Services/http-wine.service";
 
 @Component({

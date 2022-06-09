@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import {HttpService} from "../../Services/http.service";
 
 import {ActivatedRoute, Router} from "@angular/router";
 import {Wine} from "../../Wine";
