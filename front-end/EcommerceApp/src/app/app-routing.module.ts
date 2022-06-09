@@ -16,6 +16,7 @@ import {RedWineComponent} from "./Component/red-wine/red-wine.component";
 import {RoseWineComponent} from "./Component/rose-wine/rose-wine.component";
 import {DessertWineComponent} from "./Component/dessert-wine/dessert-wine.component";
 import {SparklingWineComponent} from "./Component/sparkling-wine/sparkling-wine.component";
+import {RegisterUserComponent} from "./Component/register-user/register-user.component";
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'rose-wine', component: RoseWineComponent},
   {path: 'dessert-wine', component: DessertWineComponent},
   {path: 'sparkling-wine', component: SparklingWineComponent},
+  {path: 'register-user', component: RegisterUserComponent},
 ];
 
 @NgModule({

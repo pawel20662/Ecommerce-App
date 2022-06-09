@@ -29,7 +29,9 @@
 </div>
 <div class="all-wine">
   <div class="item1"*ngFor="let wine of wines">
-    <div class="img"></div>
+    <div class="img">
+      <img [src]="wine?.imgUrl">
+    </div>
     <div class="desc">
       <p>{{wine?.name}}</p>
       <p>{{wine?.price}}zł</p>

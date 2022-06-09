@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from "../../Services/http.service";
 import {Wine} from "../../Wine";
+import {HttpWineService} from "../../Services/http-wine.service";
 
 @Component({
   selector: 'app-main-page',
@@ -10,13 +11,13 @@ import {Wine} from "../../Wine";
 export class MainPageComponent implements OnInit {
   isMenuOpened: boolean = false;
     wines: Wine[] | undefined;
-  constructor(private httpService: HttpService) { }
+  constructor(private httpWine: HttpWineService) { }
 
   ngOnInit(): void {
     this.getWine();
   }
   getWine(): void {
-    this.httpService.getWine().subscribe(
+    this.httpWine.getWine().subscribe(
       (response: Wine[]) => {
         this.wines = response;
         console.log(this.wines);

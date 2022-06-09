@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+
 @Transactional
 @Service
 public class WineService {
@@ -17,6 +18,7 @@ public class WineService {
     }
 
     public List<Wine> findAllWine(){
+
         return wineRepo.findAll();
     }
 
@@ -24,9 +26,12 @@ public class WineService {
         return wineRepo.save(wine);
     }
 
-    public Wine updateWine(Wine wine, Long id) {
+    public Wine updateWine(Wine updateWine, Long id) {
 
-        return wineRepo.save(wine);
+        return wineRepo.save(updateWine);
+    }
+    public List<Wine> findWineByCategory(String category){
+        return wineRepo.findWineByCategory(category);
     }
 
     public Wine findWineById(Long id) {
@@ -34,6 +39,8 @@ public class WineService {
     }
 
     public void deleteWine(Long id) {
+
         wineRepo.deleteWineById(id);
     }
+
 }

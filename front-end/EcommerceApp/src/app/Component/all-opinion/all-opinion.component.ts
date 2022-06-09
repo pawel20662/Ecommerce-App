@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpService} from "../../Services/http.service";
 import {Opinion} from "../../Opinion";
+import {HttpOpinionService} from "../../Services/http-opinion.service";
 
 @Component({
   selector: 'app-all-opinion',
@@ -11,17 +11,25 @@ export class AllOpinionComponent implements OnInit {
 
   public opinions: Opinion[] | undefined;
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpOpinion: HttpOpinionService) { }
 
   ngOnInit(): void {
     this.getOpinion();
   }
   getOpinion(){
-    this.httpService.getAllOpinion().subscribe(
+    this.httpOpinion.getAllOpinion().subscribe(
       (response: Opinion[]) => {
         this.opinions = response;
         console.log(this.opinions);
       }
     )
   }
+
+  deleteOpinion(id: number) {
+    this.httpOpinion.deleteOpinion(id).subscribe(
+      opinion => {this.getOpinion()},
+      error => console.log('error')
+    );
+  }
 }
+

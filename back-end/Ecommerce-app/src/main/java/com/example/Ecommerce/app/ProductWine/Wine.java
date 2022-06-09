@@ -15,6 +15,19 @@ public class Wine {
     private Long id;
     private String name;
 
+    public Wine(String category) {
+        this.category = category;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    private String category;
     public Boolean getNew_product() {
         return new_product;
     }

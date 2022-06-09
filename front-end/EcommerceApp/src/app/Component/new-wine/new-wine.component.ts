@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Wine} from "../../Wine";
 import {HttpService} from "../../Services/http.service";
+import {HttpWineService} from "../../Services/http-wine.service";
 
 @Component({
   selector: 'app-new-wine',
@@ -11,14 +12,16 @@ export class NewWineComponent implements OnInit {
 
      public wines: Wine[] | undefined;
 
-    constructor(private httpService: HttpService) { }
+    constructor(private httpWine: HttpWineService) { }
 
   ngOnInit(): void {
     this.getWine();
   }
-
+  filterWineNew(){
+     return  this.wines?.filter(wine => wine.new_product);
+  }
   getWine(): void {
-    this.httpService.getWine().subscribe(
+    this.httpWine.getWine().subscribe(
       (response: Wine[]) => {
         this.wines = response;
         console.log(this.wines);

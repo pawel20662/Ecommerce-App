@@ -16,6 +16,7 @@ public class WineController {
 
     public WineController(WineService wineService) {
         this.wineService = wineService;
+
     }
 
     @GetMapping("/all")
@@ -28,6 +29,11 @@ public class WineController {
          Wine wine = wineService.findWineById(id);
          return new ResponseEntity<>(wine, HttpStatus.OK);
     }
+    @GetMapping("/{category}")
+    public ResponseEntity<List<Wine>> findWineByCategory(@PathVariable("category") String category){
+        List<Wine> categoryWine = wineService.findWineByCategory(category);
+        return new ResponseEntity<>(categoryWine, HttpStatus.OK);
+    }
 
     @PostMapping("/add")
     public ResponseEntity<Wine> AddWine(@RequestBody Wine wine) {
@@ -35,11 +41,14 @@ public class WineController {
         return new ResponseEntity<>(newWine, HttpStatus.OK);
     }
 
+    @Transactional
     @PutMapping("/update/{id}")
-    public ResponseEntity<Wine> updateWine(@PathVariable("id") Long id, @RequestBody Wine wine) {
+    public ResponseEntity<Wine> updateEmployee(@RequestBody Wine wine, @PathVariable("id") Long id) {
         Wine updateWine = wineService.updateWine(wine, id);
-        return new ResponseEntity<>(updateWine, HttpStatus.OK);
+        return new ResponseEntity(updateWine, HttpStatus.OK);
     }
+    //todo do zrobienia update by id  dalej nie działa\\
+
 
     @Transactional
     @DeleteMapping("/delete/{id}")

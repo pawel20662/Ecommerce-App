@@ -3,14 +3,13 @@ import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Wine} from "../Wine";
-import {Opinion} from "../Opinion";
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpService {
+export class HttpWineService {
 
-    private apiServerUrl = environment.apiBaseUrl;
+  private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +21,10 @@ export class HttpService {
     return this.http.get<Wine>(`${this.apiServerUrl}/wine/find/${id}`);
   }
 
+  public getWineByCategory(category: string | undefined): Observable<Wine> {
+    return this.http.get<Wine>(`${this.apiServerUrl}/wine/${category}`);
+  }
+
   public deleteWine(id: number){
     return this.http.delete<Wine>(`${this.apiServerUrl}/wine/delete/${id}`);
   }
@@ -30,14 +33,8 @@ export class HttpService {
     return this.http.post<Wine>(`${this.apiServerUrl}/wine/add`, wine);
   }
 
-  public updateWine(id: number | undefined, wine: Wine[] | undefined): Observable<Object>{
-    return this.http.put(`${this.apiServerUrl}/wine/update/${id}`, wine);
-  }
-
-  public getAllOpinion(): Observable<Opinion[]> {
-    return this.http.get<Opinion[]>(`${this.apiServerUrl}/opinion/all`);
-  }
-  public addOpinion(opinion: Opinion): Observable<Opinion> {
-    return this.http.post<Opinion>(`${this.apiServerUrl}/opinion/add`, opinion);
+  public updateWine(wine:  Wine, id: number | undefined ): Observable<Wine> {
+    return this.http.put<Wine>(`${this.apiServerUrl}/wine/update/${id}`, wine);
   }
 }
+

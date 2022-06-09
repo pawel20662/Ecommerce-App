@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {HttpService} from "../../Services/http.service";
+import {HttpOpinionService} from "../../Services/http-opinion.service";
 
 @Component({
   selector: 'app-send-opinion',
@@ -10,7 +11,7 @@ import {HttpService} from "../../Services/http.service";
 export class SendOpinionComponent implements OnInit {
 
   OpinionForm = new FormGroup({});
-  constructor(private fb: FormBuilder, private httpService: HttpService) { }
+  constructor(private fb: FormBuilder, private httpOpinion: HttpOpinionService) { }
 
   ngOnInit(): void {
     this.Opinion()
@@ -29,10 +30,13 @@ export class SendOpinionComponent implements OnInit {
         lastName: this.OpinionForm.value.lastName,
         description: this.OpinionForm.value.description,
     }
-    this.httpService.addOpinion(newOpinion).subscribe(
+    this.httpOpinion.addOpinion(newOpinion).subscribe(
       success => console.log('success: ', success),
       error => console.log('error')
     );
     this.OpinionForm.reset();
   }
+
+
+
 }
