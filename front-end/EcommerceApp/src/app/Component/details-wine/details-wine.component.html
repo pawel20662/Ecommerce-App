@@ -1,0 +1,21 @@
+<div class="container-details-wine" >
+
+  <div class="details-grid">
+    <div class="right"><img [src]="wine?.imgUrl"></div>
+    <div class="left">
+      <p>Name: {{wine?.name}}</p>
+      <p>Mark: {{wine?.mark}}</p>
+      <p>Category: {{wine?.category}}</p>
+      <p>Country: {{wine?.country}}</p>
+      <div class="desc">
+        <p>Description:</p> {{wine?.description}}
+      </div>
+      <p>Price: {{wine?.price}}</p>
+      <br /><br />
+      <button type="button">Add to Cart</button>
+      <button type="button" (click)="back()">Back to all wines</button>
+    </div>
+  </div>
+
+</div>
+<app-footer></app-footer>

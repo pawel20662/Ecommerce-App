@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Wine} from "../../Wine";
 import {HttpWineService} from "../../Services/http-wine.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-wine',
@@ -11,7 +12,7 @@ export class NewWineComponent implements OnInit {
 
      public wines: Wine[] | undefined;
 
-    constructor(private httpWine: HttpWineService) { }
+    constructor(private httpWine: HttpWineService, private router: Router) { }
 
   ngOnInit(): void {
     this.getWine();
@@ -28,4 +29,7 @@ export class NewWineComponent implements OnInit {
     )
   }
 
+    goToDetails(id: number) {
+    this.router.navigate(['details', id])
+  }
 }

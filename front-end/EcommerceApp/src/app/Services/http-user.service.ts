@@ -24,4 +24,8 @@ export class HttpUserService {
   public getAllUsers(): Observable<User[]>{
     return this.http.get<User[]>(`${this.apiServerUrl}/api/allUsers`);
   }
+
+  public deleteUser(id: number) {
+    return this.http.delete<User>(`${this.apiServerUrl}/api/delete/${id}`)
+  }
 }

@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -34,7 +35,14 @@ public class WineController {
         List<Wine> categoryWine = wineService.findWineByCategory(category);
         return new ResponseEntity<>(categoryWine, HttpStatus.OK);
     }
-
+    @GetMapping("/{category}/{price}/{country}")
+    public ResponseEntity<List<Wine>> findWineByCategoryAndPriceAndCountry(@PathVariable("category") String category,
+                                                                           @PathVariable("price")BigDecimal price,
+                                                                           @PathVariable("country") String country){
+        List<Wine> filterWine = wineService.findWineByCategoryAndPriceAndCountry(category, price, country);
+        return new ResponseEntity<>(filterWine, HttpStatus.OK);
+    }
+        //todo nie szuka ceny od 100-300\\
     @PostMapping("/add")
     public ResponseEntity<Wine> AddWine(@RequestBody Wine wine) {
         Wine newWine = wineService.addWine(wine);

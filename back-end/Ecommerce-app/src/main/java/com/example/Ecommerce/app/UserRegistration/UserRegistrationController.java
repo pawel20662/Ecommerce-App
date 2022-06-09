@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @AllArgsConstructor
@@ -38,10 +39,15 @@ public class UserRegistrationController {
         return new ResponseEntity<>(userLogin, HttpStatus.OK);
     }
 
-    @GetMapping("allUsers")
+    @GetMapping("/allUsers")
     public ResponseEntity<List<UserRegistration>> getAllUsers() {
         List<UserRegistration> userRegistrations = userRegistrationService.findAllUser();
         return new ResponseEntity<>(userRegistrations, HttpStatus.OK);
     }
-
+    @Transactional
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteUserById(@PathVariable("id") Long id) {
+        userRegistrationService.deleteUserById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

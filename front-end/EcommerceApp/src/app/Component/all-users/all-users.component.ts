@@ -25,4 +25,10 @@ export class AllUsersComponent implements OnInit {
       error => console.log("error")
     );
   }
+  deleteUser(id: number){
+    this.httpUser.deleteUser(id).subscribe(
+      user => {this.getAllUsers()},
+      error => alert("error")
+    )
+  }
 }

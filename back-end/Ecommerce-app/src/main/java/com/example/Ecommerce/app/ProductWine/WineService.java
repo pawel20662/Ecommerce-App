@@ -4,6 +4,7 @@ import com.example.Ecommerce.app.Exception.UserNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Transactional
@@ -17,7 +18,7 @@ public class WineService {
         this.wineRepo = wineRepo;
     }
 
-    public List<Wine> findAllWine(){
+    public List<Wine> findAllWine() {
 
         return wineRepo.findAll();
     }
@@ -30,12 +31,17 @@ public class WineService {
 
         return wineRepo.save(updateWine);
     }
-    public List<Wine> findWineByCategory(String category){
+
+    public List<Wine> findWineByCategory(String category) {
         return wineRepo.findWineByCategory(category);
     }
 
     public Wine findWineById(Long id) {
         return wineRepo.findWineById(id).orElseThrow(() -> new UserNotFoundException("User by " + id + "was not found"));
+    }
+
+    public List<Wine> findWineByCategoryAndPriceAndCountry(String category, BigDecimal price, String country) {
+        return wineRepo.findWineByCategoryAndPriceAndCountry(category, price, country);
     }
 
     public void deleteWine(Long id) {

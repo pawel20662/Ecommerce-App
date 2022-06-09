@@ -1,7 +1,7 @@
 <div class="main-dessert-wine">
   <div *ngFor="let wine of wines" class="item1">
     <div class="img">
-      <img [src]="wine?.imgUrl">
+      <a> <img [src]="wine?.imgUrl" (click)="goToDetails(wine.id)"></a>
     </div>
     <div class="desc">
       <p>{{wine?.name}}</p>

@@ -3,10 +3,12 @@ package com.example.Ecommerce.app.UserRegistration;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 @AllArgsConstructor
+@Transactional
 public class UserRegistrationService {
 
         private final UserRegistrationRepo userRegistrationRepo;
@@ -22,7 +24,12 @@ public class UserRegistrationService {
         public UserRegistration findUserByEmailIdAndPassword(String email, String password) {
             return userRegistrationRepo.findUserByEmailIdAndPassword(email, password);
         }
+
         public List<UserRegistration> findAllUser() {
             return userRegistrationRepo.findAll();
+        }
+
+        public void deleteUserById(Long id){
+            userRegistrationRepo.deleteUserById(id);
         }
 }

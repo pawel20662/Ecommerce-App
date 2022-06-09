@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Wine} from "../../Wine";
 import {HttpWineService} from "../../Services/http-wine.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-rose-wine',
@@ -13,7 +14,7 @@ export class RoseWineComponent implements OnInit {
 
   private rose: string | undefined = "rose-wine";
 
-  constructor(private httpWine: HttpWineService) { }
+  constructor(private httpWine: HttpWineService, private router: Router) { }
 
   ngOnInit(): void {
     this.getWineByCategory(this.rose)
@@ -29,5 +30,7 @@ export class RoseWineComponent implements OnInit {
       error => console.log('error')
     );
   }
-
+  goToDetails(id: number) {
+    this.router.navigate(['details', id])
+  }
 }

@@ -9,4 +9,6 @@ public interface UserRegistrationRepo extends JpaRepository<UserRegistration, Lo
     public UserRegistration findByEmailId(String emailId);
 
     public UserRegistration findUserByEmailIdAndPassword (String emailId, String password);
+
+      void deleteUserById(Long id);
 }

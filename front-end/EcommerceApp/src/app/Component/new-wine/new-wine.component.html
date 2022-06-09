@@ -2,7 +2,7 @@
 <div class="main-new-wine">
   <div *ngFor="let wine of filterWineNew()| slice:0:8" class="item1">
     <div class="img">
-      <img [src]="wine?.imgUrl">
+       <img [src]="wine?.imgUrl" (click)="goToDetails(wine.id)">
     </div>
     <div class="desc">
       <p>{{wine?.name}}</p>

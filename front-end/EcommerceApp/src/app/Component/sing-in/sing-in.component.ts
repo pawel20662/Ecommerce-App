@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {HttpUserService} from "../../Services/http-user.service";
+import {User} from "../../User";
+import {AuthService} from "../../Services/auth.service";
 
 @Component({
   selector: 'app-sing-in',
@@ -12,9 +14,10 @@ export class SingInComponent implements OnInit {
 
   loginUserForm = new FormGroup({});
   hide = true;
+  user: User | undefined;
 
 
-  constructor(private router: Router, private httpUser: HttpUserService, private  fb: FormBuilder) { }
+  constructor(private router: Router, private httpUser: HttpUserService, private  fb: FormBuilder, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.loginUser();
@@ -39,7 +42,10 @@ export class SingInComponent implements OnInit {
     }
 
     this.httpUser.loginUser(checkUser).subscribe(
-      success => alert("Login Successfully"),
+      (userResponse: User) => {
+        this.user = userResponse;
+        console.log(this.user);
+      },
         error => alert("Sorry Please enter correct User")
     )
 

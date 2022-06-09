@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name="wine", schema = "public")
@@ -62,7 +63,7 @@ public class Wine {
     private String description;
     private String imgUrl;
 
-    public Wine(Long id, String name, String mark, String price, String country) {
+    public Wine(Long id, String name, String mark, BigDecimal price, String country) {
         id = id;
         this.name = name;
         this.mark = mark;
@@ -100,11 +101,11 @@ public class Wine {
         this.mark = mark;
     }
 
-    public String getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -116,6 +117,6 @@ public class Wine {
         this.country = country;
     }
 
-    private String price;
+    private BigDecimal price;
     private String country;
 }

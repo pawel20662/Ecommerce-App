@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Wine} from "../../Wine";
 import {HttpWineService} from "../../Services/http-wine.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sparkling-wine',
@@ -13,10 +14,10 @@ export class SparklingWineComponent implements OnInit {
 
   private sparkling: string | undefined = "sparkling-wine";
 
-  constructor(private httpWine: HttpWineService ) { }
+  constructor(private httpWine: HttpWineService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getWineByCategory(this.sparkling)
+    this.getWineByCategory(this.sparkling);
 
   }
 
@@ -29,5 +30,7 @@ export class SparklingWineComponent implements OnInit {
       error => console.log('error')
     );
   }
-
+  goToDetails(id: number) {
+    this.router.navigate(['details', id])
+  }
 }
