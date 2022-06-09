@@ -3,33 +3,43 @@
   <h2>Menu Filter</h2>
   <div class="menu-container">
     <div class="menu-toggler" (click)="toggleMenu()">Wine category</div>
+    <form>
     <div class="menu" *ngIf="isMenuOpened">
-      <div class="menu-item"><input type="checkbox">white wine</div>
-      <div class="menu-item"><input type="checkbox">red wine</div>
-      <div class="menu-item"><input type="checkbox">rose wine</div>
-      <div class="menu-item"><input type="checkbox">dessert wine</div>
-      <div class="menu-item"><input type="checkbox">sparkling wine</div>
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group-category" formControlName="category">
+        <mat-radio-button value="red-wine">Red wine</mat-radio-button>
+        <mat-radio-button value="white-wine">White wine</mat-radio-button>
+        <mat-radio-button value="rose-wine">Rose wine</mat-radio-button>
+        <mat-radio-button value="dessert-wine">Dessert wine</mat-radio-button>
+        <mat-radio-button value="sparkling-wine">Sprakling wine</mat-radio-button>
+      </mat-radio-group>
     </div>
 
     <div class="menu-toggler" (click)="toggleMenu()">Price</div>
     <div class="menu" *ngIf="isMenuOpened">
-      <div class="menu-item"><input type="checkbox">100-300PLN</div>
-      <div class="menu-item"><input type="checkbox">Above 300PLN</div>
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group-category" formControlName="price">
+        <mat-radio-button value="100-300">100-300PLN</mat-radio-button>
+        <mat-radio-button value="300-200">More than 300PLN</mat-radio-button>
+      </mat-radio-group>
     </div>
 
     <div class="menu-toggler" (click)="toggleMenu()">Country</div>
     <div class="menu" *ngIf="isMenuOpened">
-      <div class="menu-item"><input type="checkbox">France</div>
-      <div class="menu-item"><input type="checkbox">Spain</div>
-      <div class="menu-item"><input type="checkbox">Germany</div>
-      <div class="menu-item"><input type="checkbox">Italy</div>
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group-category" formControlName="country">
+        <mat-radio-button value="France">France</mat-radio-button>
+        <mat-radio-button value="Spain">Spain</mat-radio-button>
+        <mat-radio-button value="Germany">Germany</mat-radio-button>
+        <mat-radio-button value="Italy">Italy</mat-radio-button>
+      </mat-radio-group>
     </div>
+    <button type="submit" class="apply">apply</button>
+    </form>
   </div>
-  <button type="submit" class="apply">apply</button>
 </div>
 <div class="all-wine">
   <div class="item1"*ngFor="let wine of wines">
-    <div class="img"></div>
+    <div class="img">
+      <img [src]="wine?.imgUrl" (click)="goToDetails(wine.id)">
+    </div>
     <div class="desc">
       <p>{{wine?.name}}</p>
       <p>{{wine?.price}}zł</p>

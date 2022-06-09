@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name="wine", schema = "public")
@@ -15,6 +16,19 @@ public class Wine {
     private Long id;
     private String name;
 
+    public Wine(String category) {
+        this.category = category;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    private String category;
     public Boolean getNew_product() {
         return new_product;
     }
@@ -49,7 +63,7 @@ public class Wine {
     private String description;
     private String imgUrl;
 
-    public Wine(Long id, String name, String mark, String price, String country) {
+    public Wine(Long id, String name, String mark, BigDecimal price, String country) {
         id = id;
         this.name = name;
         this.mark = mark;
@@ -87,11 +101,11 @@ public class Wine {
         this.mark = mark;
     }
 
-    public String getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -103,6 +117,6 @@ public class Wine {
         this.country = country;
     }
 
-    private String price;
+    private BigDecimal price;
     private String country;
 }

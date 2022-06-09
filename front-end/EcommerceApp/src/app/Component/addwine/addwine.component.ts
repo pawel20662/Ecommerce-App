@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {HttpService} from "../../Services/http.service";
+import {HttpWineService} from "../../Services/http-wine.service";
 
 @Component({
   selector: 'app-addwine',
@@ -11,7 +11,7 @@ export class AddwineComponent implements OnInit {
 
   addWineForm = new FormGroup({});
 
-  constructor(private fb: FormBuilder, private httpService: HttpService) { }
+  constructor(private fb: FormBuilder, private httpWine: HttpWineService) { }
 
   ngOnInit(): void {
     this.WineForm();
@@ -40,7 +40,7 @@ export class AddwineComponent implements OnInit {
       imgUrl: this.addWineForm.value.imgUrl,
       new_product: this.addWineForm.value.new_product
     }
-    this.httpService.addWine(newWine).subscribe(
+    this.httpWine.addWine(newWine).subscribe(
       success => console.log('success: ', success),
       error => console.log('error')
     );

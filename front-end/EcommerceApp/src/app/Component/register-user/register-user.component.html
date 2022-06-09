@@ -1,0 +1,26 @@
+<div class="container-singin">
+    <div class="form">
+      <h2>Register new User</h2>
+      <form [formGroup]="addNewUserForm" (ngSubmit)="addNewUser()">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter your name" formControlName="emailId">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Enter your last name" formControlName="userName">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
+        </mat-form-field>
+        <div class="submit">
+          <button type="submit">Register new User</button>
+          <button type="button"(click)="goToSingIn()">Back to Sing In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <app-footer></app-footer>

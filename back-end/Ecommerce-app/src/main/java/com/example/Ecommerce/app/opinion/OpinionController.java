@@ -28,4 +28,9 @@ public class OpinionController {
         Opinion newOpinion = opinionService.addOpinion(opinion);
         return new ResponseEntity<>(newOpinion, HttpStatus.OK);
     }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteOpinion(@PathVariable("id") Long id){
+        opinionService.deleteOpinion(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

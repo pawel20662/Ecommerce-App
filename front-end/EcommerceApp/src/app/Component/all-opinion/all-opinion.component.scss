@@ -16,3 +16,12 @@ p {
   text-align: center;
   font-size: 2rem;
 }
+button {
+  width: 4rem;
+  height: 4vh;
+  margin-left: 2rem;
+  background-color: #543230;
+}
+button:hover {
+  background-color: teal;
+}

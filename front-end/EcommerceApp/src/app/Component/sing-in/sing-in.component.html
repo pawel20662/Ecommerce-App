@@ -1,1 +1,22 @@
-<p>sing-in works!</p>
+<div class="container-register">
+  <div class="form">
+    <h2>Sing In</h2>
+    <form [formGroup]="loginUserForm">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter your name" formControlName="emailId">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
+      </mat-form-field>
+
+      <div class="submit">
+        <button type="submit" (click)="checkUserLogin()">Log In</button>
+        <button type="submit"(click)="goToRegister()">Go to Register</button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -27,6 +27,10 @@ import { RedWineComponent } from './component/red-wine/red-wine.component';
 import { RoseWineComponent } from './component/rose-wine/rose-wine.component';
 import { DessertWineComponent } from './component/dessert-wine/dessert-wine.component';
 import { SparklingWineComponent } from './component/sparkling-wine/sparkling-wine.component';
+import {MatIconModule} from "@angular/material/icon";
+import { RegisterUserComponent } from './component/register-user/register-user.component';
+import { AllUsersComponent } from './component/all-users/all-users.component';
+import { DetailsWineComponent } from './component/details-wine/details-wine.component';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -50,6 +54,9 @@ import { SparklingWineComponent } from './component/sparkling-wine/sparkling-win
     RoseWineComponent,
     DessertWineComponent,
     SparklingWineComponent,
+    RegisterUserComponent,
+    AllUsersComponent,
+    DetailsWineComponent,
   ],
     imports: [
         BrowserModule,
@@ -62,6 +69,7 @@ import { SparklingWineComponent } from './component/sparkling-wine/sparkling-win
         MatRadioModule,
         ReactiveFormsModule,
         FormsModule,
+        MatIconModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

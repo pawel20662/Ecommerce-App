@@ -1,0 +1,36 @@
+.main-rose-wine {
+  display: grid;
+  grid-template-columns: repeat(4, 22.8%);
+  row-gap: 12rem;
+  column-gap: 3%;
+  grid-auto-rows: 20rem;
+  border-bottom: 2px solid black;
+  height: 110vh;
+  margin-top: 3%;
+}
+
+.item1 {
+  height: 50vh;
+  border: 1.5px dotted black;
+}
+.img {
+  width: 100%;
+  height: 68%;
+}
+.desc {
+  width: 100%;
+  height: 32%;
+  padding-top: 1.3rem;
+}
+.button {
+  text-align: center;
+  position: relative;
+}
+button {
+  width: 3rem;
+  border-radius: 50%;
+}
+img {
+  width: 100%;
+  height: 100%;
+}

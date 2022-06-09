@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Wine} from "../../Wine";
+import {HttpWineService} from "../../Services/http-wine.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-red-wine',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RedWineComponent implements OnInit {
 
-  constructor() { }
+  public wines: Wine[] | undefined;
+
+  private red: string | undefined = "red-wine";
+
+  constructor(private httpWine: HttpWineService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getWineByCategory(this.red)
+
   }
 
+  getWineByCategory(red: string | undefined){
+
+    this.httpWine.getWineByCategory(red).subscribe(
+      (response: Wine[]) => {
+        this.wines = response;
+      },
+      error => console.log('error')
+    );
+  }
+  goToDetails(id: number) {
+    this.router.navigate(['details', id])
+  }
 }

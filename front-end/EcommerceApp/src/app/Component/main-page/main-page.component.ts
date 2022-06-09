@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpService} from "../../Services/http.service";
+import {Component, OnInit} from '@angular/core';
 import {Wine} from "../../Wine";
+import {HttpWineService} from "../../Services/http-wine.service";
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-page',
@@ -9,14 +11,21 @@ import {Wine} from "../../Wine";
 })
 export class MainPageComponent implements OnInit {
   isMenuOpened: boolean = false;
-    wines: Wine[] | undefined;
-  constructor(private httpService: HttpService) { }
+
+  wines: Wine[] | undefined;
+
+  filterForm = new FormGroup({});
+
+  constructor(private httpWine: HttpWineService, private fb: FormBuilder, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.getWine();
+    this.filter();
   }
+
   getWine(): void {
-    this.httpService.getWine().subscribe(
+    this.httpWine.getWine().subscribe(
       (response: Wine[]) => {
         this.wines = response;
         console.log(this.wines);
@@ -24,12 +33,25 @@ export class MainPageComponent implements OnInit {
     )
   }
 
+
   toggleMenu(): void {
     this.isMenuOpened = !this.isMenuOpened;
   }
 
   clickedOutside(): void {
     this.isMenuOpened = false;
+  }
+
+  filter(){
+    this.filterForm = this.fb.group({
+      category: '',
+      price: '',
+      country: '',
+    })
+    //todo do dokończenia filtrowanie\\
+  }
+  goToDetails(id: number) {
+    this.router.navigate(['details', id])
   }
 }
 

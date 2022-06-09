@@ -1,50 +1,55 @@
 <div class="main">
-<!--  [(ngModel)] = "wines.mark"-->
   <div class="form">
     <h3>Update Wine</h3>
-    <form (ngSubmit)="updateWine()">
+    <form [formGroup]="updateForm" (ngSubmit)="updateWine()">
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="id wine" formControlName="id">
+      </mat-form-field>
+
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Enter name of wine">
+        <input matInput placeholder="Enter name of wine" formControlName="name">
       </mat-form-field>
 
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Mark</mat-label>
-        <input matInput placeholder="Enter mark of wine">
+        <input matInput placeholder="Enter mark of wine" formControlName="mark">
       </mat-form-field>
 
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Category</mat-label>
-        <input matInput placeholder="Enter category of wine">
+        <input matInput placeholder="Enter category of wine" formControlName="category">
       </mat-form-field>
 
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Price</mat-label>
-        <input matInput placeholder="Enter price of wine">
+        <input matInput placeholder="Enter price of wine" formControlName="price">
       </mat-form-field>
 
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Country</mat-label>
-        <input matInput placeholder="Enter country of wine">
+        <input matInput placeholder="Enter country of wine" formControlName="country">
       </mat-form-field>
 
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Description</mat-label>
-        <input matInput placeholder="Enter description of wine">
+        <input matInput placeholder="Enter description of wine" formControlName="description">
       </mat-form-field>
 
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>ImgUrl</mat-label>
-        <input matInput placeholder="Enter imgUrl of wine">
+        <input matInput placeholder="Enter imgUrl of wine" formControlName="imgUrl">
       </mat-form-field>
       <h4>New product?</h4>
-      <mat-radio-group aria-label="Select an option">
+      <mat-radio-group aria-label="Select an option" formControlName="new_product">
         <mat-radio-button value="true">Yes</mat-radio-button>
         <mat-radio-button value="false">No</mat-radio-button>
       </mat-radio-group>
 
       <div class="submit">
-        <button type="submit" (click)="updateWine()">Send a opinion</button>
+        <button type="submit">Send a opinion</button>
       </div>
     </form>
   </div>

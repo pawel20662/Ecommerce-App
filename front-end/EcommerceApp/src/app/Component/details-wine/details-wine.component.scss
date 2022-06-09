@@ -1,0 +1,36 @@
+.container-details-wine{
+  width: 100%;
+  margin: auto;
+}
+.details-grid{
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin-top: 5%;
+}
+.right{
+  height: 65vh;
+  text-align: center;
+}
+.left{
+
+}
+img{
+  width: 25%;
+  height: 100%;
+}
+p {
+  padding-top: 3%;
+  font-size: 2rem;
+}
+.desc{
+  font-size: 1.3rem;
+}
+button {
+  width: 300px;
+  margin: 5%;
+  height: 50px;
+  font-size: 1.2rem;
+}
+button:hover{
+  background-color: #543230;
+}
