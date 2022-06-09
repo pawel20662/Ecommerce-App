@@ -23,7 +23,7 @@ export class MainPageComponent implements OnInit {
       }
     )
   }
-
+//todo do zrobienia filtrowanie \\
   toggleMenu(): void {
     this.isMenuOpened = !this.isMenuOpened;
   }

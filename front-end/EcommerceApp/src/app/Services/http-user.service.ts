@@ -20,4 +20,8 @@ export class HttpUserService {
   public loginUser(user: { password: string; emailId: string }): Observable<User> {
     return this.http.post<User>(`${this.apiServerUrl}/api/login`, user);
   }
+
+  public getAllUsers(): Observable<User[]>{
+    return this.http.get<User[]>(`${this.apiServerUrl}/api/allUsers`);
+  }
 }

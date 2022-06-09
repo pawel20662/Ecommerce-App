@@ -17,6 +17,7 @@ import {RoseWineComponent} from "./Component/rose-wine/rose-wine.component";
 import {DessertWineComponent} from "./Component/dessert-wine/dessert-wine.component";
 import {SparklingWineComponent} from "./Component/sparkling-wine/sparkling-wine.component";
 import {RegisterUserComponent} from "./Component/register-user/register-user.component";
+import {AllUsersComponent} from "./Component/all-users/all-users.component";
 
 
 const routes: Routes = [
@@ -26,11 +27,16 @@ const routes: Routes = [
   {path: 'sing-in', component: SingInComponent},
   {path: 'admin-panel', component: PanelAdminComponent},
   {path: 'admin-panel/allWines', component: AdminAllWinesComponent},
+  {path: 'admin-panel/allUsers', component: AllUsersComponent},
   {path: 'admin-panel/addWine', component: AddwineComponent},
   {path: 'admin-panel/allOpinion', component: AllOpinionComponent},
   {path: 'updateWine/:id', component: UpdateWineComponent},
   {path: `admin-panel/allOpinion/addWine`, redirectTo: 'admin-panel/addWine' },
   {path: 'admin-panel/addWine/allOpinion', redirectTo: 'admin-panel/allOpinion'},
+  {path: `admin-panel/allOpinion/allUsers`, redirectTo: 'admin-panel/allUsers'},
+  {path: `admin-panel/allUsers/allOpinion`, redirectTo: 'admin-panel/allOpinion'},
+  {path: `admin-panel/allUsers/addWine`, redirectTo: 'admin-panel/addWine'},
+  {path: `admin-panel/addWine/allUsers`, redirectTo: 'admin-panel/allUsers'},
   {path: 'white-wine', component: WhiteWineComponent},
   {path: 'red-wine', component: RedWineComponent},
   {path: 'rose-wine', component: RoseWineComponent},

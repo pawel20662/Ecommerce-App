@@ -29,6 +29,7 @@ import { DessertWineComponent } from './component/dessert-wine/dessert-wine.comp
 import { SparklingWineComponent } from './component/sparkling-wine/sparkling-wine.component';
 import {MatIconModule} from "@angular/material/icon";
 import { RegisterUserComponent } from './component/register-user/register-user.component';
+import { AllUsersComponent } from './component/all-users/all-users.component';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { RegisterUserComponent } from './component/register-user/register-user.c
     DessertWineComponent,
     SparklingWineComponent,
     RegisterUserComponent,
+    AllUsersComponent,
   ],
     imports: [
         BrowserModule,

@@ -36,7 +36,7 @@ export class RegisterUserComponent implements OnInit {
 
     }
     this.httpUser.addUser(newUser).subscribe(
-      success => console.log('success:', success),
+      user => {this.router.navigate(['sing-in']), alert("Success register user")},
       error => console.log('error')
     )
   }
