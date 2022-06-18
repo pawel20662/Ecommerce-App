@@ -40,8 +40,8 @@ public class WineService {
         return wineRepo.findWineById(id).orElseThrow(() -> new UserNotFoundException("User by " + id + "was not found"));
     }
 
-    public List<Wine> findWineByCategoryAndPriceAndCountry(String category, BigDecimal price, String country) {
-        return wineRepo.findWineByCategoryAndPriceAndCountry(category, price, country);
+    public List<Wine> findWineByCategoryAndCountryAndMaxMinPrice(String category, String country, BigDecimal minPrice, BigDecimal maxPrice) {
+        return wineRepo.findWineByCategoryAndCountryAndPriceBetween(category, country, minPrice, maxPrice);
     }
 
     public void deleteWine(Long id) {

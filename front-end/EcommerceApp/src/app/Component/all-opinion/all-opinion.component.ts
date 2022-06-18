@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Opinion} from "../../Opinion";
-import {HttpOpinionService} from "../../Services/http-opinion.service";
+import {HttpOpinionService} from "../../services/http-opinion.service";
 
 @Component({
   selector: 'app-all-opinion',

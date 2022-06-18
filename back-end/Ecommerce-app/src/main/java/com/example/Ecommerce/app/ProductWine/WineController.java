@@ -35,11 +35,12 @@ public class WineController {
         List<Wine> categoryWine = wineService.findWineByCategory(category);
         return new ResponseEntity<>(categoryWine, HttpStatus.OK);
     }
-    @GetMapping("/{category}/{price}/{country}")
+    @GetMapping("/{category}/{min-price}/{max-price}/{country}")
     public ResponseEntity<List<Wine>> findWineByCategoryAndPriceAndCountry(@PathVariable("category") String category,
-                                                                           @PathVariable("price")BigDecimal price,
+                                                                           @PathVariable("min-price")BigDecimal minPrice,
+                                                                           @PathVariable("max-price")BigDecimal maxPrice,
                                                                            @PathVariable("country") String country){
-        List<Wine> filterWine = wineService.findWineByCategoryAndPriceAndCountry(category, price, country);
+        List<Wine> filterWine = wineService.findWineByCategoryAndCountryAndMaxMinPrice(category, country, minPrice, maxPrice);
         return new ResponseEntity<>(filterWine, HttpStatus.OK);
     }
         //todo nie szuka ceny od 100-300\\

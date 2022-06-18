@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {HttpUserService} from "../../Services/http-user.service";
+import {HttpUserService} from "../../services/http-user.service";
 
 @Component({
   selector: 'app-register-user',
