@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {HttpUserService} from "../../Services/http-user.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {HttpUserService} from "../../services/http-user.service";
 import {User} from "../../User";
-import {AuthService} from "../../Services/auth.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-sing-in',
@@ -25,7 +25,7 @@ export class SingInComponent implements OnInit {
 
   loginUser(){
     this.loginUserForm = this.fb.group({
-      emailId: '',
+      emailId: ['', Validators.email],
       password: ''
     })
   }

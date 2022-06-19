@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {HttpWineService} from "../../Services/http-wine.service";
+import {HttpWineService} from "../../services/http-wine.service";
 
 @Component({
   selector: 'app-addwine',
@@ -14,10 +14,10 @@ export class AddwineComponent implements OnInit {
   constructor(private fb: FormBuilder, private httpWine: HttpWineService) { }
 
   ngOnInit(): void {
-    this.WineForm();
+    this.wineForm();
   }
 
-  WineForm() {
+  wineForm() {
     this.addWineForm = this.fb.group({
       name: '',
       mark: '',
@@ -27,7 +27,7 @@ export class AddwineComponent implements OnInit {
       description: '',
       imgUrl: '',
       new_product: '',
-    })
+    });
   }
   addWine() {
     const newWine = {

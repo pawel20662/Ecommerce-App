@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Wine} from "../../Wine";
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {HttpWineService} from "../../Services/http-wine.service";
+import {HttpWineService} from "../../services/http-wine.service";
 
 @Component({
   selector: 'app-update-wine',

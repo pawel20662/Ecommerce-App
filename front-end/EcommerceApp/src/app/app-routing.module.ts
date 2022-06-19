@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {SendOpinionComponent} from "./Component/send-opinion/send-opinion.component";
-import {ContactComponent} from "./Component/contact/contact.component";
-import {NewWineComponent} from "./Component/new-wine/new-wine.component";
-import {SingInComponent} from "./Component/sing-in/sing-in.component";
-import {PanelAdminComponent} from "./Component/panel-admin/panel-admin.component";
-import {AdminAllWinesComponent} from "./Component/admin-all-wines/admin-all-wines.component";
-import {AddwineComponent} from "./Component/addwine/addwine.component";
-import {AllOpinionComponent} from "./Component/all-opinion/all-opinion.component";
-import {UpdateWineComponent} from "./Component/update-wine/update-wine.component";
-import {WhiteWineComponent} from "./Component/white-wine/white-wine.component";
-import {RedWineComponent} from "./Component/red-wine/red-wine.component";
-import {RoseWineComponent} from "./Component/rose-wine/rose-wine.component";
-import {DessertWineComponent} from "./Component/dessert-wine/dessert-wine.component";
-import {SparklingWineComponent} from "./Component/sparkling-wine/sparkling-wine.component";
-import {RegisterUserComponent} from "./Component/register-user/register-user.component";
-import {AllUsersComponent} from "./Component/all-users/all-users.component";
-import {DetailsWineComponent} from "./Component/details-wine/details-wine.component";
+import {SendOpinionComponent} from "./component/send-opinion/send-opinion.component";
+import {ContactComponent} from "./component/contact/contact.component";
+import {NewWineComponent} from "./component/new-wine/new-wine.component";
+import {SingInComponent} from "./component/sing-in/sing-in.component";
+import {PanelAdminComponent} from "./component/panel-admin/panel-admin.component";
+import {AdminAllWinesComponent} from "./component/admin-all-wines/admin-all-wines.component";
+import {AddwineComponent} from "./component/addwine/addwine.component";
+import {AllOpinionComponent} from "./component/all-opinion/all-opinion.component";
+import {UpdateWineComponent} from "./component/update-wine/update-wine.component";
+import {WhiteWineComponent} from "./component/white-wine/white-wine.component";
+import {RedWineComponent} from "./component/red-wine/red-wine.component";
+import {RoseWineComponent} from "./component/rose-wine/rose-wine.component";
+import {DessertWineComponent} from "./component/dessert-wine/dessert-wine.component";
+import {SparklingWineComponent} from "./component/sparkling-wine/sparkling-wine.component";
+import {RegisterUserComponent} from "./component/register-user/register-user.component";
+import {AllUsersComponent} from "./component/all-users/all-users.component";
+import {DetailsWineComponent} from "./component/details-wine/details-wine.component";
 
 
 const routes: Routes = [

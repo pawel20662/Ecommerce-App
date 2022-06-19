@@ -15,5 +15,5 @@ public interface WineRepo extends JpaRepository<Wine, Long> {
 
      List<Wine> findWineByCategory(String category);
 
-    List<Wine> findWineByCategoryAndPriceAndCountry(String category, BigDecimal price, String country);
+    List<Wine> findWineByCategoryAndCountryAndPriceBetween(String category, String country, BigDecimal minPrice, BigDecimal maxPrice);
 }

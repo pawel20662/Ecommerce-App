@@ -1,9 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Wine} from "../../Wine";
 
 import {Router} from "@angular/router";
-import {Observable} from "rxjs";
-import {HttpWineService} from "../../Services/http-wine.service";
+import {HttpWineService} from "../../services/http-wine.service";
+import {flatMap} from "rxjs/internal/operators";
 
 @Component({
   selector: 'app-admin-all-wines',
@@ -15,7 +15,8 @@ export class AdminAllWinesComponent implements OnInit {
   public wines: Wine[] | undefined;
 
 
-  constructor(private httpWine: HttpWineService, private router: Router) { }
+  constructor(private httpWine: HttpWineService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.getWine();
@@ -31,15 +32,20 @@ export class AdminAllWinesComponent implements OnInit {
   }
 
   deleteWine(id: number) {
-    this.httpWine.deleteWine(id).subscribe(
-      success => { this.getWine() }, //todo tak się tego nie robi \\
-      error => console.log('error')
+    this.httpWine.deleteWine(id)
+      .pipe(flatMap((success) => this.httpWine.getWine()))
+      .subscribe(
+        (response: Wine[] | undefined) => {
+          this.wines = response;
+          console.log(this.wines);
+        }
     );
-
   }
 
-  goToUpdateWine(id: number){
+
+
+  goToUpdateWine(id: number) {
     // this.updateWineService.updateWine.next(this.wines);
-      this.router.navigate(['updateWine', id]);
+    this.router.navigate(['updateWine', id]);
   }
 }

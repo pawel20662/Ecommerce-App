@@ -16,10 +16,10 @@ public class UserRegistrationController {
     private final UserRegistrationService userRegistrationService;
 
     @PostMapping("/register")
-    public ResponseEntity<UserRegistration> newUser(@RequestBody UserRegistration userRegistration) throws Exception {
+    public ResponseEntity<UserRegistration> newUser(@RequestBody UserRegistrationDTO userRegistration) throws Exception {
         String temEmailId = userRegistration.getEmailId();
         if(temEmailId != null && "".equals(temEmailId)){
-            UserRegistration user =  userRegistrationService.findUserByEmailId(temEmailId);
+            UserRegistrationDTO user =  userRegistrationService.findUserByEmailId(temEmailId);
             if(user != null) {
                 throw new Exception("user with " + temEmailId + "is already exist");
             }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SampleService} from "../../services/sample-service";
+import {stringify} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly sampleService: SampleService) { }
 
   ngOnInit(): void {
+  this.sampleService.sample
+    .subscribe(sample => console.log(sample + "1"));
+    this.sampleService.sample
+      .subscribe(sample => console.log(sample + "2"));
+  }
+
+  send() {
+    this.sampleService.sample.next("value");
   }
 
 }

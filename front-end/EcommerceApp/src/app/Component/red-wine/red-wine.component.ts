@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Wine} from "../../Wine";
-import {HttpWineService} from "../../Services/http-wine.service";
+import {HttpWineService} from "../../services/http-wine.service";
 import {Router} from "@angular/router";
 
 @Component({
