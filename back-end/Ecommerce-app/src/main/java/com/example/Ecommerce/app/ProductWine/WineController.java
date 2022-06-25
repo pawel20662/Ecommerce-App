@@ -43,7 +43,6 @@ public class WineController {
         List<Wine> filterWine = wineService.findWineByCategoryAndCountryAndMaxMinPrice(category, country, minPrice, maxPrice);
         return new ResponseEntity<>(filterWine, HttpStatus.OK);
     }
-        //todo nie szuka ceny od 100-300\\
     @PostMapping("/add")
     public ResponseEntity<Wine> AddWine(@RequestBody Wine wine) {
         Wine newWine = wineService.addWine(wine);
@@ -53,10 +52,9 @@ public class WineController {
     @Transactional
     @PutMapping("/update/{id}")
     public ResponseEntity<Wine> updateEmployee(@RequestBody Wine wine, @PathVariable("id") Long id) {
-        Wine updateWine = wineService.updateWine(wine, id);
+        Wine updateWine = wineService.updateWine(id, wine);
         return new ResponseEntity(updateWine, HttpStatus.OK);
     }
-    //todo do zrobienia update by id  dalej nie działa\\
 
 
     @Transactional

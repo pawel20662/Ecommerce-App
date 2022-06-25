@@ -12,6 +12,7 @@ import {Router} from "@angular/router";
 export class MainPageComponent implements OnInit {
   isMenuOpened: boolean = false;
 
+
   wines: Wine[] | undefined;
 
   filterForm = new FormGroup({});
@@ -45,13 +46,28 @@ export class MainPageComponent implements OnInit {
   filter(){
     this.filterForm = this.fb.group({
       category: '',
-      price: '',
+      minPrice: '',
+      maxPrice: '',
       country: '',
     })
-    //todo do dokończenia filtrowanie\\
   }
   goToDetails(id: number) {
     this.router.navigate(['details', id])
+  }
+
+  filterSearch() {
+    const filter = {
+      category: this.filterForm.value.category,
+      minPrice: this.filterForm.value.minPrice,
+      maxPrice: this.filterForm.value.maxPrice,
+      country: this.filterForm.value.country,
+    }
+    this.httpWine.filterWine(filter.category, filter.minPrice, filter.maxPrice, filter.country).subscribe(
+      (response: Wine[]) => {
+        this.wines = response;
+        console.log(this.wines);
+      }
+    )
   }
 }
 

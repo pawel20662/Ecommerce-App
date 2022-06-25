@@ -19,14 +19,13 @@ public class OpinionController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Opinion>> getAllOpinion(){
-        List<Opinion> opinion = opinionService.allOpinion();
+    public ResponseEntity<List<OpinionDTO>> getAllOpinion(){
+        List<OpinionDTO> opinion = opinionService.allOpinion();
         return new ResponseEntity<>(opinion, HttpStatus.OK);
     }
     @PostMapping("/add")
-    public ResponseEntity<Opinion> addOpinion(@RequestBody Opinion opinion) {
-        Opinion newOpinion = opinionService.addOpinion(opinion);
-        return new ResponseEntity<>(newOpinion, HttpStatus.OK);
+    public void addOpinion(@RequestBody OpinionDTO opinion) {
+        opinionService.addOpinion(opinion);
     }
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteOpinion(@PathVariable("id") Long id){

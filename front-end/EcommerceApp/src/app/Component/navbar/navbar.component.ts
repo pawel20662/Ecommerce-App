@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {SampleService} from "../../services/sample-service";
-import {stringify} from "@angular/compiler/src/util";
+import {AuthService} from "../../services/auth.service";
+
 
 @Component({
   selector: 'app-navbar',
@@ -9,17 +9,15 @@ import {stringify} from "@angular/compiler/src/util";
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private readonly sampleService: SampleService) { }
+  isMenuOpen = false;
+  constructor(private readonly authService: AuthService) { }
 
   ngOnInit(): void {
-  this.sampleService.sample
-    .subscribe(sample => console.log(sample + "1"));
-    this.sampleService.sample
-      .subscribe(sample => console.log(sample + "2"));
-  }
 
-  send() {
-    this.sampleService.sample.next("value");
   }
+toggleMenu(){
+    this.isMenuOpen = !this.isMenuOpen;
+}
+
 
 }

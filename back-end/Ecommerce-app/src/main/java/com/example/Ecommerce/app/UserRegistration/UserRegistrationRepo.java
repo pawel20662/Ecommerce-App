@@ -6,9 +6,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRegistrationRepo extends JpaRepository<UserRegistration, Long> {
 
-    public UserRegistration findByEmailId(String emailId);
+    UserRegistration findByEmailId(String emailId);
 
-    public UserRegistration findUserByEmailIdAndPassword (String emailId, String password);
+    UserRegistration findUserByEmailIdAndPassword(String emailId, String password);
 
       void deleteUserById(Long id);
 }
