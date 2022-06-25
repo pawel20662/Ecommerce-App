@@ -36,5 +36,9 @@ export class HttpWineService {
   public updateWine(wine:  Wine, id: number | undefined ): Observable<Wine> {
     return this.http.put<Wine>(`${this.apiServerUrl}/wine/update/${id}`, wine);
   }
+
+  public filterWine(category: String, minPrice: number, maxPrice: number, country: String){
+    return this.http.get<Wine[]>(`${this.apiServerUrl}/wine/${category}/${minPrice}/${maxPrice}/${country}`);
+  }
 }
 

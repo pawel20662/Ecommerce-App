@@ -8,15 +8,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="shopping_card", schema = "public")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name="shopping_card", schema = "public")
 public class ShoppingCard {
 
     @Id
@@ -24,10 +24,11 @@ public class ShoppingCard {
     @Column(updatable = false, nullable = false)
     private Long id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "UserRegistration_id", referencedColumnName = "id")
     private UserRegistration userRegistration;
 
-    @ManyToOne
-    private Set<Wine> wines;
+    @OneToMany(mappedBy ="shoppingCard")
+    private Set<Wine> wines = new HashSet<>();
 
 }

@@ -17,6 +17,7 @@ import {SparklingWineComponent} from "./component/sparkling-wine/sparkling-wine.
 import {RegisterUserComponent} from "./component/register-user/register-user.component";
 import {AllUsersComponent} from "./component/all-users/all-users.component";
 import {DetailsWineComponent} from "./component/details-wine/details-wine.component";
+import {ShoppingCardComponent} from "./Component/shopping-card/shopping-card.component";
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   {path: 'send-opinion', component: SendOpinionComponent},
   {path: 'sing-in', component: SingInComponent},
+  {path: 'card', component: ShoppingCardComponent},
   {path: 'admin-panel', component: PanelAdminComponent},
   {path: 'admin-panel/allWines', component: AdminAllWinesComponent},
   {path: 'admin-panel/allUsers', component: AllUsersComponent},

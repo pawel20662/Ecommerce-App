@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 @Transactional
 @Service
@@ -27,9 +28,21 @@ public class WineService {
         return wineRepo.save(wine);
     }
 
-    public Wine updateWine(Wine updateWine, Long id) {
+    public Wine updateWine(Long id, Wine wine){
+        Optional<Wine> oldWineOpt = wineRepo.findWineById(id);
+        oldWineOpt.ifPresent(oldWine -> {
+            oldWine.setName(wine.getName());
+            oldWine.setMark(wine.getMark());
+            oldWine.setCategory(wine.getCategory());
+            oldWine.setPrice(wine.getPrice());
+            oldWine.setCountry(wine.getCountry());
+            oldWine.setDescription(wine.getDescription());
+            oldWine.setImgUrl(wine.getImgUrl());
+            oldWine.setNew_product(wine.getNew_product());
+            wineRepo.save(oldWine);
+        });
 
-        return wineRepo.save(updateWine);
+        return wine;
     }
 
     public List<Wine> findWineByCategory(String category) {

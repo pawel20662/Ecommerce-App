@@ -17,7 +17,7 @@ export class SingInComponent implements OnInit {
   user: User | undefined;
 
 
-  constructor(private router: Router, private httpUser: HttpUserService, private  fb: FormBuilder, private auth: AuthService) { }
+  constructor(private router: Router, private httpUser: HttpUserService, private  fb: FormBuilder, public auth: AuthService) { }
 
   ngOnInit(): void {
     this.loginUser();
@@ -45,11 +45,13 @@ export class SingInComponent implements OnInit {
       (userResponse: User) => {
         this.user = userResponse;
         console.log(this.user);
+        alert("Logged")
       },
         error => alert("Sorry Please enter correct User")
     )
 
   }
+
 }
 
 

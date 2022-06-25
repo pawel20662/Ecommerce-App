@@ -31,6 +31,8 @@ import {MatIconModule} from "@angular/material/icon";
 import { RegisterUserComponent } from './component/register-user/register-user.component';
 import { AllUsersComponent } from './component/all-users/all-users.component';
 import { DetailsWineComponent } from './component/details-wine/details-wine.component';
+import { ShoppingCardComponent } from './component/shopping-card/shopping-card.component';
+import { NavbarMobileComponent } from './component/navbar-mobile/navbar-mobile.component';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { DetailsWineComponent } from './component/details-wine/details-wine.comp
     RegisterUserComponent,
     AllUsersComponent,
     DetailsWineComponent,
+    ShoppingCardComponent,
+    NavbarMobileComponent,
   ],
     imports: [
         BrowserModule,

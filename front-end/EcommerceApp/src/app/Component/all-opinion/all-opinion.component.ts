@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Opinion} from "../../Opinion";
 import {HttpOpinionService} from "../../services/http-opinion.service";
+import {flatMap} from "rxjs/internal/operators";
 
 @Component({
   selector: 'app-all-opinion',
@@ -26,7 +27,9 @@ export class AllOpinionComponent implements OnInit {
   }
 
   deleteOpinion(id: number) {
-    this.httpOpinion.deleteOpinion(id).subscribe(
+    this.httpOpinion.deleteOpinion(id)
+      .pipe(flatMap((success) =>  this.httpOpinion.getAllOpinion()))
+      .subscribe(
       opinion => {this.getOpinion()},
       error => console.log('error')
     );

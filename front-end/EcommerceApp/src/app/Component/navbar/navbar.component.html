@@ -9,11 +9,14 @@
     <div class="item3">
       <ul class="nav">
         <li><a routerLink="sing-in">Sing In</a></li>
-        <li><a href="#">Shopping Cart</a></li>
+        <li><a routerLink="card">Shopping Cart</a></li>
+        <li class="burger" (click)="toggleMenu()">
+          <i class="material-icons">{{ isMenuOpen ? "close" : "menu"}}</i>
+        <li>
       </ul>
     </div>
   </div>
-  <div class="wrapper2">
+  <div class="wrapper2" [class.open]="isMenuOpen">
     <ul>
       <li><a routerLink="all-wine"> All wines</a></li>
       <li>Category
@@ -35,6 +38,5 @@
       </li>
     </ul>
   </div>
-  <button (click)="send()">button</button>
 
 </div>

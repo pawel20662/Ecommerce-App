@@ -1,5 +1,7 @@
 package com.example.Ecommerce.app.ProductWine;
 
+import lombok.AllArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -8,6 +10,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name="wine", schema = "public")
+@AllArgsConstructor
 public class Wine {
 
     @Id
@@ -15,6 +18,10 @@ public class Wine {
     @Column(updatable = false, nullable = false)
     private Long id;
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "shopping_card_id")
+    private Wine shoppingCard;
 
     public Wine(String category) {
         this.category = category;
@@ -119,4 +126,12 @@ public class Wine {
 
     private BigDecimal price;
     private String country;
+
+    public Wine getShoppingCard() {
+        return shoppingCard;
+    }
+
+    public void setShoppingCard(Wine shoppingCard) {
+        this.shoppingCard = shoppingCard;
+    }
 }

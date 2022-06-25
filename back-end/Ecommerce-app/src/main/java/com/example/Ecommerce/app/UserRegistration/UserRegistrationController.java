@@ -29,7 +29,7 @@ public class UserRegistrationController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserRegistration> loginUser(@RequestBody UserRegistration userRegistration) throws Exception {
+    public ResponseEntity<UserRegistration> loginUser(@RequestBody UserRegistrationDTO userRegistration) throws Exception {
         String tempEmailId = userRegistration.getEmailId();
         String tempPassword = userRegistration.getPassword();
         UserRegistration userLogin = userRegistrationService.findUserByEmailIdAndPassword(tempEmailId, tempPassword);

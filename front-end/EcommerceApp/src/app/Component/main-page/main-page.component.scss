@@ -1,61 +1,87 @@
-.menu-filter {
-  width: 15%;
-  float: left;
-  height: 15vh;
+.container-main-page {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  min-height: auto;
+  row-gap: 20%;
+  margin-top: 2%;
 }
+
 .all-wine {
   display: grid;
-  position: relative;
-  grid-template-columns: repeat(3, 48.6%);
-  row-gap: 20%;
-  column-gap: 28%;
+  grid-template-columns: repeat(3, 26.6%);
+  row-gap: 18%;
+  column-gap: 10.2%;
   grid-auto-rows: 20rem;
-  width: 50%;
-  float: left;
-  margin-left: 2%;
+  min-height: auto;
 }
-.container {
-  margin-top: 2rem;
-  height: auto;
-  width: 85%;
-}
+
 .item1 {
   height: 50vh;
   border: 1.5px dotted black;
 }
+
 .img {
   width: 100%;
   height: 68%;
 }
+
 .desc {
   width: 100%;
   height: 32%;
   padding-top: 1.3rem;
 }
+
 .button {
   text-align: center;
   position: relative;
 }
+
 button {
   width: 3rem;
   border-radius: 50%;
 }
-.menu-toggler {
-  width: 100%;
-  font-size: 1.5rem;
-  color: black;
-  text-align: center;
-  padding: 2%;
-}
-img {
-  width: 100%;
-  height: 100%;
-}
-.example-radio-group-category {
+
+.example-full-width {
+  width: 75%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+}
+
+.p {
+  padding: 1%;
 }
 .mat-radio-button ~ .mat-radio-button {
-  margin: 5px;
+  margin: 2px;
+}
+@media only screen and (max-width: 706px) {
+  .container-main-page{
+    grid-template-columns: 40% 60%;
+  }
+  .main-page-filter-menu{
+    font-size: 1.1rem;
+    height: 62vh;
+  }
+  .all-wine{
+    grid-template-columns: 100%;
+    row-gap: 6%;
+  }
+  .item1{
+    height: 60vh;
+  }
+}
+@media only screen and (min-width: 707px) and (max-width: 1247px){
+  .container-main-page{
+    grid-template-columns: 40% 60%;
+  }
+  .main-page-filter-menu{
+    font-size: 1.1rem;
+    height: 62vh;
+  }
+  .all-wine{
+    grid-template-columns: repeat(2, 45%);
+    row-gap: 13%;
+  }
+  .item1{
+    height: 65vh;
+  }
 }
