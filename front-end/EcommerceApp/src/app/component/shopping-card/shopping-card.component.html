@@ -1,0 +1,21 @@
+<div class="container-card">
+  <p>Shopping Card</p>
+  <table class="table-card">
+    <thead>
+    <th>Aprove card</th>
+    <th>Name</th>
+    <th>Price</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let wine of wines">
+      <td><img [src]="wine.imgUrl"></td>
+      <td>{{wine.name}}</td>
+      <td>{{wine.price}}</td>
+      <td><button type="button">Remove</button></td>
+    </tr>
+    <tr class="allPrice">Total cost: {{200 + 200}}</tr>
+
+    </tbody>
+  </table>
+  <button type="button" class="clearCard">Clear card</button>
+</div>

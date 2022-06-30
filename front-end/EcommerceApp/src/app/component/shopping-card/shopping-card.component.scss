@@ -1,0 +1,40 @@
+.container-card{
+  width: 75%;
+  height: 50vh;
+  margin: auto;
+  padding-top: 2%;
+  min-height: min-content;
+}
+.table-card{
+  width: 100%;
+  height: min-content;
+  text-align: center;
+  border: 1.5px solid black;
+  border-radius: 20px;
+  padding: 5px;
+}
+p {
+  text-align: center;
+  font-size: 2rem;
+}
+button {
+  width: 4rem;
+  height: 4vh;
+  margin-left: 2rem;
+  background-color: #543230;
+}
+button:hover {
+  background-color: teal;
+}
+img{
+  width: 20%;
+  height: 15vh;
+}
+.allPrice{
+  text-align: right;
+}
+.clearCard{
+  margin-top: 2%;
+  width: 10rem;
+  height: 5vh;
+}

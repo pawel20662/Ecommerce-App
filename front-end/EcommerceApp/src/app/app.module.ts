@@ -32,7 +32,6 @@ import { RegisterUserComponent } from './component/register-user/register-user.c
 import { AllUsersComponent } from './component/all-users/all-users.component';
 import { DetailsWineComponent } from './component/details-wine/details-wine.component';
 import { ShoppingCardComponent } from './component/shopping-card/shopping-card.component';
-import { NavbarMobileComponent } from './component/navbar-mobile/navbar-mobile.component';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -60,7 +59,6 @@ import { NavbarMobileComponent } from './component/navbar-mobile/navbar-mobile.c
     AllUsersComponent,
     DetailsWineComponent,
     ShoppingCardComponent,
-    NavbarMobileComponent,
   ],
     imports: [
         BrowserModule,

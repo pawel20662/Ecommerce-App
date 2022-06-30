@@ -1,0 +1,65 @@
+.container{
+  width: 75%;
+  height: 50vh;
+  margin-top: 2rem;
+}
+.all-wine {
+  display: grid;
+  grid-template-columns: repeat(3, 48.6%);
+  row-gap: 38%;
+  column-gap: 20%;
+  grid-auto-rows: 20rem;
+  width: 50%;
+  margin-left: 5rem;
+}
+.item1 {
+  height: 50vh;
+  border: 1.5px dotted black;
+}
+.img {
+  width: 100%;
+  height: 68%;
+}
+.desc {
+  width: 100%;
+  height: 32%;
+  padding-top: 1.3rem;
+}
+button {
+  width: 4rem;
+  height: 4vh;
+  margin-left: 2rem;
+  background-color: #543230;
+}
+button:hover {
+  background-color: teal;
+}
+@media only screen and(min-width: 1132px){
+  .all-wine{
+    column-gap: 13%;
+    margin-left:15%;
+  }
+  .item1{
+    height: 55vh;
+  }
+}
+
+@media only screen and (min-width: 801px) and(max-width: 1131px){
+  .all-wine{
+    grid-template-columns: repeat(2, 73.5%);
+    margin-left: 50%;
+  }
+  .item1{
+    height: 55vh;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .all-wine{
+    grid-template-columns: 100%;
+    margin-left: 80%;
+    row-gap: 15%;
+  }
+  .item1{
+    height: 55vh;
+  }
+}

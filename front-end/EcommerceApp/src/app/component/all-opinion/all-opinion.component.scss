@@ -1,0 +1,29 @@
+.container{
+  width: 75%;
+  height: 50vh;
+  float: left;
+  margin-top: 2rem;
+}
+table {
+  width: 100%;
+  height: min-content;
+  text-align: center;
+  border: 1.5px solid black;
+  border-radius: 20px;
+  padding: 5px;
+}
+p {
+  text-align: center;
+  font-size: 2rem;
+}
+button {
+  width: 4rem;
+  height: 4vh;
+  margin-left: 2rem;
+  background-color: #543230;
+}
+button:hover {
+  background-color: teal;
+}
+
+
