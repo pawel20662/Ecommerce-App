@@ -12,7 +12,6 @@ public interface ShoppingCardRepo extends JpaRepository<ShoppingCard, Long> {
 
     ShoppingCard findByUserRegistrationId(Long id);
 
-    Wine findWineById(Long id);
 
     UserRegistration userRegistration(Long id);
 

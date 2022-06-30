@@ -17,7 +17,7 @@ import {SparklingWineComponent} from "./component/sparkling-wine/sparkling-wine.
 import {RegisterUserComponent} from "./component/register-user/register-user.component";
 import {AllUsersComponent} from "./component/all-users/all-users.component";
 import {DetailsWineComponent} from "./component/details-wine/details-wine.component";
-import {ShoppingCardComponent} from "./Component/shopping-card/shopping-card.component";
+import {ShoppingCardComponent} from "./component/shopping-card/shopping-card.component";
 
 
 const routes: Routes = [
