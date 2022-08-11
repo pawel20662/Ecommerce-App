@@ -8,7 +8,8 @@
     </div>
     <div class="item3">
       <ul class="nav">
-        <li><a routerLink="sing-in" >Sing In</a></li>
+        <li><a routerLink="sing-in" *ngIf="!auth.isLogged">Sing In</a></li>
+        <li (click)="openDialog()"><a routerLink="sing-in" *ngIf="auth.isLogged">Welcome {{auth.currentlyLoggedUser?.userName}}</a></li>
         <li><a routerLink="card">Shopping Cart</a></li>
         <li class="burger" (click)="toggleMenu()">
           <i class="material-icons">{{ isMenuOpen ? "close" : "menu"}}</i>

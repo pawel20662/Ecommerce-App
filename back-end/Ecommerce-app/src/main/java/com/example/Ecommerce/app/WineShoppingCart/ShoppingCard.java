@@ -24,11 +24,10 @@ public class ShoppingCard {
     @Column(updatable = false, nullable = false)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "UserRegistration_id", referencedColumnName = "id")
-    private UserRegistration userRegistration;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "user_registration_id", referencedColumnName = "id")
+//    private UserRegistration userRegistration;
 
-    @OneToMany(mappedBy ="shoppingCard")
-    private Set<Wine> wines = new HashSet<>();
+    private Set<Wine> wines;
 
 }

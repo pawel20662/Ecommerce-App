@@ -7,11 +7,13 @@ import {User} from "../User";
 export class AuthService {
 
   isLogged: boolean = false;
+  currentlyLoggedUser: User | undefined;
 
   constructor() { }
 
   loggedUser(user: User){
 this.isLogged = true;
+this.currentlyLoggedUser = user;
 }
 
 logoutUser(){

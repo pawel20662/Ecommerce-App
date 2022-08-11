@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
-import {User} from "../../User";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {PopUpComponent} from "../pop-up/pop-up.component";
 
 
 @Component({
@@ -11,14 +12,20 @@ import {User} from "../../User";
 export class NavbarComponent implements OnInit {
 
   isMenuOpen = false;
-  constructor(private readonly auth: AuthService) { }
+
+  constructor(public auth: AuthService, public dialogRef: MatDialog) {
+  }
 
   ngOnInit(): void {
 
   }
-toggleMenu(){
+
+  toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-}
+  }
 
 
+  openDialog(): void {
+    this.dialogRef.open(PopUpComponent);
+  }
 }

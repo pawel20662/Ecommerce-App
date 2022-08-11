@@ -7,7 +7,7 @@
       <p>{{wine?.name}}</p>
       <p>{{wine?.price}}zł</p>
       <div class="button">
-        <button type="submit">Add to cart</button>
+        <button type="submit" (click)="addToCard(wine.id)" *ngIf="auth.isLogged">Add to cart</button>
       </div>
     </div>
 

@@ -15,4 +15,7 @@ export class HttpCardService {
   public clearCard() {
     return this.http.delete(`${this.apiServerUrl}/card/clear`)
   }
+  public addToCard(userId: number | undefined, wineId: number){
+    return this.http.put(`${this.apiServerUrl}/card/add`, {wineId: wineId, userId: userId})
+  }
 }

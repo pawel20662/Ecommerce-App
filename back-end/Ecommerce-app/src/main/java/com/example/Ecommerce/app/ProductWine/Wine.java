@@ -1,5 +1,6 @@
 package com.example.Ecommerce.app.ProductWine;
 
+
 import lombok.AllArgsConstructor;
 
 import javax.persistence.Entity;
@@ -19,9 +20,8 @@ public class Wine {
     private Long id;
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "shopping_card_id")
-    private Wine shoppingCard;
+//    @OneToMany(mappedBy = "wine")
+//    private Set<ShoppingCardWine> shoppingCardWine;
 
     public Wine(String category) {
         this.category = category;
@@ -36,6 +36,7 @@ public class Wine {
     }
 
     private String category;
+
     public Boolean getNew_product() {
         return new_product;
     }
@@ -127,11 +128,4 @@ public class Wine {
     private BigDecimal price;
     private String country;
 
-    public Wine getShoppingCard() {
-        return shoppingCard;
-    }
-
-    public void setShoppingCard(Wine shoppingCard) {
-        this.shoppingCard = shoppingCard;
-    }
 }

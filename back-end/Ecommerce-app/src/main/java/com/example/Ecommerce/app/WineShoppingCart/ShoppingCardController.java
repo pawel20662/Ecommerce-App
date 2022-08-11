@@ -18,22 +18,14 @@ public class ShoppingCardController {
         this.shoppingCardService = shoppingCardService;
     }
 
-    @DeleteMapping("/remove/{id}")
-    public ResponseEntity<ShoppingCard> removeWineFromCard(@PathVariable("id") Long id, UserRegistration userRegistration) {
-        ShoppingCard sc = shoppingCardService.removeWineFromCard(id, userRegistration);
-        return new ResponseEntity<>(sc, HttpStatus.OK);
-    }
-
-    @DeleteMapping("/clear")
-    public ResponseEntity<Object> clearCard(Long id) {
-        shoppingCardService.clearCard(id);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-    @GetMapping("/allWines")
-    public ResponseEntity<Wine> getAllWine(UserRegistration userRegistration){
-        List<Wine> wines = (List<Wine>) shoppingCardService.getAllWineShoppingCard(userRegistration);
-        return new ResponseEntity<>((Wine) wines, HttpStatus.OK);
-    }
-
+//    @GetMapping("/allWines")
+//    public ResponseEntity<Wine> getAllWine(UserRegistration userRegistration){
+//        List<Wine> wines = (List<Wine>) shoppingCardService.getAllWineShoppingCard(userRegistration);
+//        return new ResponseEntity<>((Wine) wines, HttpStatus.OK);
+//    }
+//    @PutMapping("/add")
+//    public void addWineToCard(@RequestBody ShoppingCardWine shoppingCardWine){
+//        shoppingCardService.addToCard(shoppingCardWine.getWineId(), shoppingCardWine.getUserId());
+//    }
 
 }
